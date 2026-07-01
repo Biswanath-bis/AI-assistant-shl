@@ -4,28 +4,32 @@ An AI-powered Retrieval-Augmented Generation (RAG) system that recommends the mo
 
 ---
 
-## 🚀 Features
+# 🚀 Features
+
 - 🔍 Semantic search over SHL assessment catalog  
 - 🧠 AI-powered recommendations using Groq LLM (LLaMA 3)  
 - 📦 Vector database using ChromaDB  
 - 🤗 HuggingFace sentence-transformer embeddings  
 - ⚡ FastAPI backend  
-- 🌐 Deployment ready (Render / Railway)  
+- 🌐 Deployment ready (Render / Railway / Streamlit)
 
 ---
 
-## 🧠 Tech Stack
+# 🧠 Tech Stack
+
 - Python  
-- FastAPI  
+
+- Streamlit (UI)  
 - LangChain  
 - ChromaDB  
 - HuggingFace Transformers  
-- Groq API (LLaMA 3)  
+- Groq API (LLaMA 3)
 
 ---
 
-## 📁 Project Structure
-```text
+# 📁 Project Structure
+
+```
 app/
 │── main.py
 │── llm.py
@@ -40,30 +44,31 @@ data/
 
 ---
 
-## ⚙️ Setup Instructions
+# ⚙️ Setup Instructions
 
-### 1️⃣ Install dependencies
+## 1️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-### 2️⃣ Create .env file
-```text
+## 2️⃣ Create `.env` file
+```
 GROQ_API_KEY=your_api_key_here
 ```
 
----
-
-### 3️⃣ Run locally
+## 3️⃣ Run locally (FastAPI version)
 ```bash
 uvicorn app.main:app --reload
 ```
 
+## 4️⃣ Run Streamlit UI (if enabled)
+```bash
+streamlit run streamlit_app.py
+```
+
 ---
 
-## 🌐 API Endpoints
+# 🌐 API Endpoints (FastAPI version)
 
 - `/` → Home  
 - `/health` → Health check  
@@ -71,7 +76,8 @@ uvicorn app.main:app --reload
 
 ---
 
-## 🧪 Example Request
+# 🧪 Example Request
+
 ```json
 POST /chat
 {
@@ -81,35 +87,35 @@ POST /chat
 
 ---
 
-## 📊 Dataset
-```text
-data/shl_product_catalog.json
-```
+# 📊 Dataset
+
+`data/shl_product_catalog.json`
 
 ---
 
-## 🚀 Deployment (Render)
+# 🚀 Deployment (Render)
 
-### Build Command
+## Build Command
 ```bash
 pip install -r requirements.txt
 ```
 
-### Start Command
+## Start Command
 ```bash
 bash start.sh
 ```
 
-### Health Check
-```text
+## Health Check
+```
 /health
 ```
 
 ---
 
-## 👨‍💻 Author
---Biswanath Bhyan--
+# 👨‍💻 Author
+
+**Biswanath Bhyan**
+```
 
 
 
- 
