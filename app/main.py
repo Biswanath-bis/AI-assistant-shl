@@ -1,32 +1,32 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
+# from fastapi import FastAPI
+# from pydantic import BaseModel
 
-from app.retriever import retrieve
-from app.llm import generate_response
+# from app.retriever import retrieve
+# from app.llm import generate_response
 
-app = FastAPI(title="SHL AI Assistant")
-
-
-@app.get("/")
-def root():
-    return {"message": "SHL AI Assistant running"}
+# app = FastAPI(title="SHL AI Assistant")
 
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+# @app.get("/")
+# def root():
+#     return {"message": "SHL AI Assistant running"}
 
 
-class QueryRequest(BaseModel):
-    query: str
+# @app.get("/health")
+# def health():
+#     return {"status": "ok"}
 
 
-@app.post("/chat")
-def chat(request: QueryRequest):
-    docs = retrieve(request.query)
-    answer = generate_response(request.query, docs)
+# class QueryRequest(BaseModel):
+#     query: str
 
-    return {
-        "query": request.query,
-        "response": answer
-    }
+
+# @app.post("/chat")
+# def chat(request: QueryRequest):
+#     docs = retrieve(request.query)
+#     answer = generate_response(request.query, docs)
+
+#     return {
+#         "query": request.query,
+#         "response": answer
+#     }
